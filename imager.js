@@ -59,7 +59,6 @@
 
   responsiveImageSizer: {
 
-    // Imager
     Imager = function (opts) {
 
       var self = this;
@@ -79,12 +78,12 @@
       ];
 
       this.selector = opts.selector || '.delayed-image-load';
-      this.className = opts.className || '.image-replace';
+      this.className = '.' + (opts.className || 'image-replace').replace(/^\.+/, '.');
       this.regex = opts.regex || /^(.+\/)\d+$/i;
 
       this.gif = document.createElement('img');
       this.gif.src = 'data:image/gif;base64,R0lGODlhEAAJAIAAAP///wAAACH5BAEAAAAALAAAAAAQAAkAAAIKhI+py+0Po5yUFQA7';
-      this.gif.className = this.className.replace(/^[#.]/, '');
+      this.gif.className = this.className.replace(/^[#\.]/, '');
 
       this.divs = $(this.selector);
       this.swapDivs();
