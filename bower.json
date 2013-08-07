@@ -1,0 +1,9 @@
+{
+  "name": "imager",
+  "version": "0.0.0",
+  "main": "imager.js",
+  "ignore": [
+    "*.md",
+    "*.html"
+  ]
+}
